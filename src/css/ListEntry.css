@@ -1,0 +1,9 @@
+.listEntry {
+  padding: 1rem;
+  width: 100%;
+  text-align: left;
+}
+
+.listEntry:hover {
+  background-color: #424242;
+}

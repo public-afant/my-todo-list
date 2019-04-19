@@ -1,0 +1,9 @@
+.group_entry {
+  /* margin: 15px auto; */
+
+  padding: 1rem;
+}
+
+.group_entry:hover {
+  background-color: #424242;
+}

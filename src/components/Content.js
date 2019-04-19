@@ -1,22 +1,25 @@
 import React from "react";
 import "../css/Content.css";
+import TodoList from "./TodoList";
 
 const Content = props => (
   <div className="content">
+    {console.log("Content ::: ", props.entry)}
     <div className="top-title">
-      <span className="title">AFANT's Todo List</span>
+      <span className="list-title">{"🗓"} List Title</span>
       <button
-        className="btn_addList"
+        className="btnAddEntryList"
         type="button"
         onClick={() => {
           alert("Click!");
         }}
       >
-        {"Add to List"}
+        {"일정 추가"}
       </button>
     </div>
 
-    <p>Content!!!!</p>
+    <TodoList listTodo={props.entry} />
+    {/* <hr className="hr_line" /> */}
   </div>
 );
 

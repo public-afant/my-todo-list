@@ -1,5 +1,52 @@
 .sidebar {
-  width: 30%;
+  width: 25%;
   background-color: #252526;
   color: white;
+}
+
+hr {
+  border-color: #424242;
+  border-style: solid;
+  /* border-color: aliceblue; */
+}
+
+.divSidebar-top {
+  height: 30px;
+}
+
+.title {
+  font-size: 26px;
+  padding: 15px 10px;
+  font-weight: 700;
+  height: 3.75rem;
+}
+
+.divTitle {
+  /* text-align: center; */
+  margin: auto;
+  float: left;
+  font-size: 20px;
+  padding-left: 20px;
+}
+
+.btnAddList {
+  width: 4rem;
+  height: 30px;
+  margin-right: 10px;
+  background-color: #333333;
+  color: white;
+  /* font-weight: 900; */
+  font-size: 1rem;
+  float: right;
+  border-radius: 15px;
+  border-style: solid;
+
+  /* height: 1.25rem; */
+}
+
+.btnAddList:focus {
+  outline: 0;
+}
+.btnAddList:hover {
+  background-color: #424242;
 }

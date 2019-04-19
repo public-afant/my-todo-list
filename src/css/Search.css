@@ -1,0 +1,32 @@
+.search_box {
+  /* margin: 2rem; */
+  width: 100%;
+}
+
+.inputSearch {
+  padding: 0px 15px 0px 15px;
+  /* padding: 0px 15px; */
+  /* padding-left: 10px;
+  padding-right: 10px; */
+  margin-bottom: 20px;
+  max-width: 95%;
+  height: 2rem;
+  color: white;
+  background-color: rgba(0, 0, 0, 0);
+  border-color: #424242;
+  border-style: solid;
+  border-width: thin;
+  border-radius: 1rem;
+  font-size: 1rem;
+  text-align: center;
+}
+
+.inputSearch:focus {
+  outline: 0;
+}
+/* 
+.btnSearch {
+  border-color: blue;
+  width: 3rem;
+  height: 2rem;
+} */

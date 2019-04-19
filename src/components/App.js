@@ -6,15 +6,36 @@ import Content from "./Content";
 class App extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      side_lists: null,
+      selectList: null
+    };
   }
+
+  componentDidMount = () => {
+    console.log(this.props.data);
+    this.setState({
+      side_lists: this.props.data
+    });
+  };
+
+  onClickList = getList => {
+    this.setState({
+      selectList: this.props.data[getList]
+    });
+  };
+
   render() {
-    return (
-      <div className="App">
-        <Sidebar />
-        <Content />
-      </div>
-    );
+    if (this.state.side_lists) {
+      return (
+        <div className="App">
+          <Sidebar list={this.state.side_lists} handle={this.onClickList} />
+          <Content entry={this.state.selectList} />
+        </div>
+      );
+    } else {
+      return <div>Loding....</div>;
+    }
   }
 }
 
