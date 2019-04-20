@@ -8,12 +8,13 @@ class App extends Component {
     super(props);
     this.state = {
       side_lists: null,
-      selectList: null
+      selectList: null,
+      selectedList: null
     };
   }
 
   componentDidMount = () => {
-    console.log(this.props.data);
+    // console.log(this.props.data);
     this.setState({
       side_lists: this.props.data
     });
@@ -21,16 +22,41 @@ class App extends Component {
 
   onClickList = getList => {
     this.setState({
-      selectList: this.props.data[getList]
+      selectList: this.props.data[getList],
+      selectedList: getList
     });
+  };
+
+  addListHandle = newList => {
+    this.props.data[newList] = [];
+    this.setState({
+      side_lists: this.props.data
+    });
+  };
+
+  addEntryHandle = (getList, newEntry) => {
+    let addEntry = {
+      entry: newEntry
+    };
+    this.props.data[getList].push(addEntry);
+    console.log(this.props.data);
+    this.setState({});
   };
 
   render() {
     if (this.state.side_lists) {
       return (
         <div className="App">
-          <Sidebar list={this.state.side_lists} handle={this.onClickList} />
-          <Content entry={this.state.selectList} />
+          <Sidebar
+            list={this.state.side_lists}
+            handle={this.onClickList}
+            addHandle={this.addListHandle}
+          />
+          <Content
+            entry={this.state.selectList}
+            selected={this.state.selectedList}
+            addEntryHandle={this.addEntryHandle}
+          />
         </div>
       );
     } else {

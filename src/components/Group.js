@@ -18,7 +18,7 @@ const Group = props => {
   let listArray = Object.keys(props.entryList);
 
   return (
-    <div>
+    <div className="groupCompo" id="group">
       {listArray.map((data, idx) => (
         <GroupEntry data={data} key={idx} handle={props.handle} />
       ))}

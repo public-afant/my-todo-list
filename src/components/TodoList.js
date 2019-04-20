@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/alt-text */
 import React from "react";
 import ListEntry from "./ListEntry";
 
@@ -21,7 +22,7 @@ import ListEntry from "./ListEntry";
 const TodoList = props => {
   if (props.listTodo !== null) {
     return (
-      <div>
+      <div className="todoList">
         {console.log("TodoList ::: ", props.listTodo)}
         {props.listTodo.map((data, idx) => (
           <ListEntry listEntry={data} key={idx} />
@@ -29,7 +30,11 @@ const TodoList = props => {
       </div>
     );
   } else {
-    return <div />;
+    return (
+      <div className="list_null">
+        <div className="waring_null">{"목록을 먼저 선택해주세요."}</div>
+      </div>
+    );
   }
 };
 
