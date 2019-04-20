@@ -2,9 +2,12 @@ import React from "react";
 import "../css/ListEntry.css";
 
 const ListEntry = props => (
-  <div className="listEntry">
-    {console.log("ListEntry ::: ", props.listEntry)}
-    {/* <input type="checkbox" style={{ marginRight: "10px" }} /> */}
+  <div
+    className="listEntry"
+    onClick={e => {
+      props.handle(props.title, e.target.innerText);
+    }}
+  >
     {props.listEntry.entry}
   </div>
 );

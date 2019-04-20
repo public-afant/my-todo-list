@@ -55,7 +55,7 @@ const Content = props => {
         </button>
       </div>
 
-      <TodoList listTodo={props.entry} />
+      <TodoList listTodo={props.entry} handle={props.handle} title={title} />
       {/* <hr className="hr_line" /> */}
     </div>
   );

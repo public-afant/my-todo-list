@@ -27,6 +27,20 @@ class App extends Component {
     });
   };
 
+  onClickEntry = (getList, getEntty) => {
+    // console.log("getLIst :: ", getList, "  getEntry :: ", getEntty);
+    console.log(this.props.data[getList]);
+    let entryArray = this.props.data[getList];
+
+    for (let i in entryArray) {
+      if (entryArray[i].entry === getEntty) {
+        entryArray.splice(i, 1);
+      }
+      // console.log(entryArray[i].entry);
+    }
+    this.setState({});
+  };
+
   addListHandle = newList => {
     this.props.data[newList] = [];
     this.setState({
@@ -56,6 +70,7 @@ class App extends Component {
             entry={this.state.selectList}
             selected={this.state.selectedList}
             addEntryHandle={this.addEntryHandle}
+            handle={this.onClickEntry}
           />
         </div>
       );
